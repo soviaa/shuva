@@ -1,13 +1,12 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="userlogin">
-<div class="loginbg"><img src="/images/loginbg.jpg" alt="carpet"></div>
-<div class="userwrapper">
+<div class="adminlogin">
+<div class="adloginbg"><img src="/images/loginbg.jpg" alt="carpet"></div>
+<div class="adminwrapper">
    
 
-         <div class="usertitle">
-            Login Form
+         <div class="admintitle">
+           Admin Login Form
          </div>
          <form action="#" method="post">
          @csrf
@@ -32,9 +31,7 @@
             <div class="field">
                <input type="submit" value="Login">
             </div>
-            <div class="signup-link">
-               Not a member? <a href="{{ route('register') }}">Signup now</a>
-            </div>
+           
          </form>
       </div>
 
@@ -42,5 +39,4 @@
 </div>
 
 </div>
-
 @endsection

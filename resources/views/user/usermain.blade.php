@@ -19,15 +19,13 @@
     <link rel="stylesheet" href="{{ asset('css/userlogin.css')}}">
     <link rel="stylesheet" href="{{ asset('css/userreg.css')}}">
     <link rel="stylesheet" href="{{ asset('css/home.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/products.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/adminlog.css')}}">
 
     <!-- Scripts -->
    
 </head>
 <body>
     @section('main')
-        {{View::make('layouts.nav')}}
+        {{View::make('user.usernav')}}
         <main class="py-4">
             @yield('content')
         </main>

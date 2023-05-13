@@ -25,24 +25,26 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/products', [App\Http\Controllers\ProductsController::class, 'product'])->name('products');
 
 
 Route::get('/register', [UserController::class,'userreg'])->name('register');
 Route::post('/register', [UserController::class,'signup'])->name('register');
 
 
-//ALL ADMIN
-Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
-    //admin dash view
-    Route::get('/dash', function () {
-        return view('Admin.adminnav');
-    })->name('admindash');
-    
-});
-// admin login
 Route::get('/login', [UserController::class,'userlogin'])->name('userlogin');
 Route::post('/login', [UserController::class,'login'])->name('userlogin');
-Route::post('/logout', [UserController::class,'logout'])->name('userlogin');
+// Route::post('/logout', [UserController::class,'logout'])->name('login');
+Route::get('/adminlogin', [AdminController::class,'adminlogin'])->name('adminlogin');
+Route::post('/adminlogin', [AdminController::class,'postadminlogin'])->name('adminlogin');
+Route::get('/admin/dash', [App\Http\Controllers\AdminController::class, 'admindash'])->name('admindash');
+
+//user 
+Route::get('/userhome', [App\Http\Controllers\UserController::class, 'userhome'])->name('userhome');
+
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+
 
 
 

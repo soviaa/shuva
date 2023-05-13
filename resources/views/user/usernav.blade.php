@@ -28,20 +28,16 @@
                 <input type="text" placeholder="Search store" name="q">
                <a href="#"><i class="ri-search-2-line"></i></a>
             </form>
-            <!-- -->
-            <div class="dropdown">
-            <a href="#" class="user"><i class="ri-user-3-line"></i>Log In</a>
-                <div class="dropdown-content">
-                 <a href="{{ route('userlogin') }}">User</a>
-                <a href="{{ route('adminlogin') }}">Admin</a>
-            </div>
-            </div>
+   
+        <a  class="user"><i class="ri-user-3-line"></i>Hello </a>
+   
             
             <!-- <div class="dropdown-content">
                 <a href="#">Buyer</a>
                 <a href="#">Admin</a>
             </div> -->
-            <a href="{{ route('register') }}">Register</a>
+            <a href="{{ route('logout') }}">Logout</a>
+      
         </div>
     </header>
     <div class="header2">

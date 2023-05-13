@@ -13,13 +13,16 @@ class UserController extends Controller
     public function userlogin(){
         return view('auth.login');
     }
+    public function userhome(){
+        return view('user.usermain');
+    }
     public function login(Request $request){
        
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
          
-                return redirect()->intended('/home');
+                return redirect()->intended('/userhome');
             }
    
     
@@ -32,11 +35,11 @@ class UserController extends Controller
     }
     
 }
-public function logout(Request $request)
-    {
-       session()->flush();
-       return redirect()->route('login');
-    }
+public function logout()
+{
+    Auth::logout();
+    return redirect('/login');
+}
     public function userreg() {
         return view('auth.register');
     }

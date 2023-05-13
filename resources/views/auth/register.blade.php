@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="userreg">
+<div class="regbg"><img src="/images/loginbg.jpg" alt="carpet"></div>
 <div class="regwrapper">
    
 
@@ -48,4 +50,5 @@
       </div>
 
 </div>
+
 @endsection
