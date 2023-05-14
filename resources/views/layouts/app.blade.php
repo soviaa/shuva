@@ -26,7 +26,7 @@
    
 </head>
 <body>
-    @section('main')
+   
         {{View::make('layouts.nav')}}
         <main class="py-4">
             @yield('content')

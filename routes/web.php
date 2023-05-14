@@ -34,12 +34,16 @@ Route::post('/register', [UserController::class,'signup'])->name('register');
 
 Route::get('/login', [UserController::class,'userlogin'])->name('userlogin');
 Route::post('/login', [UserController::class,'login'])->name('userlogin');
-// Route::post('/logout', [UserController::class,'logout'])->name('login');
+
 Route::get('/adminlogin', [AdminController::class,'adminlogin'])->name('adminlogin');
 Route::post('/adminlogin', [AdminController::class,'postadminlogin'])->name('adminlogin');
-Route::get('/admin/dash', [App\Http\Controllers\AdminController::class, 'admindash'])->name('admindash');
+Route::get('/admin/dash', [AdminController::class, 'admindash'])->name('admindash');
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('adminlogout');
+Route::get('/admin/products', [AdminController::class, 'addproducts'])->name('addproducts');
+
 
 //user 
+
 Route::get('/userhome', [App\Http\Controllers\UserController::class, 'userhome'])->name('userhome');
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
