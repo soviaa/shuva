@@ -29,7 +29,7 @@
                <a href="#"><i class="ri-search-2-line"></i></a>
             </form>
    
-        <a  class="user"><i class="ri-user-3-line"></i>Hello </a>
+        <a  class="user"><i class="ri-user-3-line"></i>Hello, {{ Auth::user()->firstname }}</a>
    
             
             <!-- <div class="dropdown-content">
