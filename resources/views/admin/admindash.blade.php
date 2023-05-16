@@ -29,9 +29,9 @@
             </div>
             <div class="sidebar">
               
-                <a href="#">
+                <a href="{{route('product')}}">
                     <span class="material-icons-sharp"> dashboard</span>
-                    <h3>Add Products</h3>
+                    <h3>Products</h3>
                     
                 </a>
                 <a href="#">
