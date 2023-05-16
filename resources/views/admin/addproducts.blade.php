@@ -2,14 +2,25 @@
 @section('product')
 <div class="addproduct">
 
-<form action="adminbook" method="POST">
+<form action="{{route('addproducts')}}" method="POST">
+@csrf
+
     <br>
 <fieldset style="padding:30px; border:4px solid #69A4A0;" > 
-<legend><h4>&nbsp;&nbsp;<u>Add Books</u></h4></legend>
-@csrf
-<input type="number" name="id" placeholder="Enter ID">
- &nbsp;&nbsp;<input type="text" name="title" placeholder="Enter Title">
- &nbsp;&nbsp;<input type="text" name="edition" placeholder="Enter edition"><br><br>
+<legend><h4>&nbsp;&nbsp;<u>Add Products</u></h4></legend>
+Product name: <input type="text" name="product_name">
+<select name="category_id" > <option value="">Select Category</option>
+
+     <option value="1" name="#">Outdoor</option>
+     <option value="2" name="#">Indoor</option>
+     <option value="3" name="#">Carpets</option>
+     <option value="4" name="#">Beddings</option>
+</select>
+Set Price: <input type="number" name="price">
+Total Stock Available: <input type="number" name="stock">
+Product image: <input type="file" name="image"><br>
+<button type="submit">Submit</button>
+
 </form>
 </div>
 @endsection

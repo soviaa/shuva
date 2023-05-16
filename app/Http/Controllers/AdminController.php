@@ -16,7 +16,7 @@ class AdminController extends Controller
             $credentials = $request->only('email', 'password');
             if (Auth::attempt($credentials)) {
              if(Auth::user()->role==1){
-                    return redirect()->intended('admin/products');
+                    return redirect()->intended('admin/product');
                 }else{
                     return redirect()->back()->with('error', 'not admin');
                 }
@@ -29,16 +29,12 @@ class AdminController extends Controller
            
         }
     }
-    public function admindash(){
-        return view('admin.admindash');
-    }
-    public function addproducts(){
-        return view('admin.addproducts');
-    }
+    
+    
     public function logout()
     {
         Auth::logout();
         return redirect('/adminlogin');
     }
-
+   
 }
