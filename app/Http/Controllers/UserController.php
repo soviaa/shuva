@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
-
+use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
  
@@ -62,6 +62,7 @@ public function logout()
                 $user->save();
                 return redirect('/login')->with('success', 'You have been successfully registered.');
         }
+   
 //         public static function isAdmin($email, $password)
 // {
 //     $user = self::where('email', $email)->first();

@@ -35,10 +35,9 @@
                     
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">monitoring</span>
-                    <h3>Sales</h3>
+                    <span class="material-icons-sharp">monitoring</span><h3>Orders</h3>
                 </a>
-                <a href="#">
+                <a href="{{route('userprint')}}">
                     <span class="material-icons-sharp">group</span>
                     <h3>Users</h3>
                 </a>
@@ -49,6 +48,7 @@
             </div>
         </aside>
         @yield('product')
+        @yield('user')
      </div>
    
 </body>

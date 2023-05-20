@@ -27,6 +27,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\ProductsController::class, 'product'])->name('products');
+Route::get('/products/outdoor', [App\Http\Controllers\ProductsController::class, 'print_outdoor'])->name('outdoor');
+Route::get('/products/indoor', [App\Http\Controllers\ProductsController::class, 'print_indoor'])->name('indoor');
+Route::get('/products/carpets', [App\Http\Controllers\ProductsController::class, 'carpets'])->name('carpets'); 
+Route::get('/products/beddings', [App\Http\Controllers\ProductsController::class, 'beddings'])->name('beddings'); 
 
 
 Route::get('/register', [UserController::class,'userreg'])->name('register');
@@ -47,7 +51,10 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('adminlogo
 Route::get('/admin/dash', [AdminProductController::class, 'admindash'])->name('admindash');
 Route::get('/admin/addproducts', [AdminProductController::class, 'addproducts'])->name('addproducts');
 Route::post('/admin/addproducts', [AdminProductController::class, 'addproducts_post'])->name('addproducts');
-Route::get('/admin/product', [AdminProductController::class, 'product'])->name('product');
+// Route::get('/admin/product', [AdminProductController::class, 'product'])->name('product');
+Route::get('/admin/product', [AdminProductController::class, 'print'])->name('product');
+Route::get('/admin/deleteproduct/{id}',[AdminProductController::class,'delete'])->name('delete');
+Route::get('/admin/adminusers',[AdminProductController::class,'userprint'])->name('userprint');
 
 
 //user 

@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Category;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminProductController extends Controller
 {
@@ -30,4 +31,31 @@ public function addproducts_post(Request $request){
     $product->save();
     return redirect('/admin/product');
 }
+public function print(){
+    $data= DB::table('products')
+    ->select('products.id','products.name AS product_name','categories.name AS category_name','products.price','products.stock',)
+    ->join('categories','products.category_id','=','categories.id')
+    ->get();
+    $category=Category::all();
+    // return view('adminbook',['adminbooks'=>$data]);
+    return view('/admin/product',compact('data','category'));
+    // return view('adminbook',['adminbooks'=>$data]);
+  
+    }
+    public function delete($id)
+    {
+        $data=Product::find($id);
+        $data->delete();
+        return redirect('/admin/product');
+    }
+    public function userprint(){
+        $data= DB::table('users')
+        ->select('users.id','users.firstname AS f_name','users.lastname AS l_name','users.email','users.phone',)
+        ->get();
+        return view('/admin/adminusers',compact('data'));
+        
+        }
+        public function user(){
+            return view('admin.adminusers');
+        }
 }
