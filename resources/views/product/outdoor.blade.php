@@ -1,24 +1,38 @@
 @extends('layouts.app')
 @section('content')
 <div class="products-category">
-    <div class="products">
-        <table>
-            <tr>
+<table><tr>
+    <div class="products_row">
     @foreach($data as $product)
-    @if($product->category_id==1)
-                <td>
-                      <div class="">
-                          <img src="/images/products/{{$product->image}}" >
-                        </div>
-                        @else 
-                          @php $count=0; @endphp
-                          @break
-                          @endif
-                </td>
-              @endforeach
-            </tr>          
-
-    </table>
+      <div class="main_product">
+        <div class="pro_image"><td>
+        @if($product->category_id==1)
+            <div class="main_images"> 
+                  <img src="/images/products/{{$product->image}}" style="height:350px; width:290px">
+            </div>
+            </div>
+            <div class="pro_content">
+            <div class="pro_desc">
+              <span>
+                {{$product->product_name}}
+              </span>
+            </div>
+            <div class="pro_price">
+            <span>
+              Rs.
+                {{$product->price}}
+              </span>
+            </div>
+            <div class="pro_cart">
+            <a href=""><i class="ri-shopping-bag-line"></i><span>Shop Now</span></a>
+            </div>
+        @endif
+            </td>
+        </div>
+      </div>
+      @endforeach
+      </tr></table>
     </div>
+
 </div>
 @endsection

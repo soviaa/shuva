@@ -29,8 +29,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [App\Http\Controllers\ProductsController::class, 'product'])->name('products');
 Route::get('/products/outdoor', [App\Http\Controllers\ProductsController::class, 'print_outdoor'])->name('outdoor');
 Route::get('/products/indoor', [App\Http\Controllers\ProductsController::class, 'print_indoor'])->name('indoor');
-Route::get('/products/carpets', [App\Http\Controllers\ProductsController::class, 'carpets'])->name('carpets'); 
-Route::get('/products/beddings', [App\Http\Controllers\ProductsController::class, 'beddings'])->name('beddings'); 
+Route::get('/products/carpets', [App\Http\Controllers\ProductsController::class, 'print_carpets'])->name('carpets'); 
+Route::get('/products/beddings', [App\Http\Controllers\ProductsController::class, 'print_beddings'])->name('beddings'); 
 
 
 Route::get('/register', [UserController::class,'userreg'])->name('register');
