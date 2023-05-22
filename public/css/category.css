@@ -1,0 +1,34 @@
+.products-category{
+    width:400px;
+    margin:20px;
+}
+.products_row{
+    display:flex;
+    justify-content:space-between;
+}
+.pro_price{
+    display: flex;
+    justify-content:space-between ;
+}
+.pro_cart{
+    padding-left: 150px;
+}
+.pro_desc span{
+    margin-bottom: 10px !important ;
+}
+.pro_content{
+    background: #b0a9a9;
+    padding: 10px 15px;
+}
+.main_product{
+    background:#c1bebe;
+}
+.main_images:hover img{
+    transform:scale(1.3);
+    height:600px;
+}
+.main_images{
+    overflow: hidden;
+    height:100%;
+    width:100%;
+}
