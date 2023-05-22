@@ -5,16 +5,13 @@
         <table>
             <tr>
     @foreach($data as $product)
-    @if($product->category_id==1)
-                <td>
-                      <div class="">
+                           
+                          <td>
+                            @if($product->category_id==1)
                           <img src="/images/products/{{$product->image}}" >
-                        </div>
-                        @else 
-                          @php $count=0; @endphp
-                          @break
                           @endif
-                </td>
+</td>
+
               @endforeach
             </tr>          
 

@@ -1,13 +1,21 @@
 @extends('layouts.app')
 @section('content')
-<div class="products-main">
-    <h1>Our Trending Products</h1>
+<div class="products-category">
     <div class="products">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="/images/products/white-plastic-chair.jpg" alt="chair">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="/images/products/tablepost_brown.jpg" alt="chair">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="/images/products/graphic_carpet_red.jpg" alt="chair">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="/images/products/wallpaper_blue.jpg" alt="chair">
+        <table>
+            <tr>
+    @foreach($data as $product)
+                           
+                          <td>
+                            @if($product->category_id==4)
+                          <img src="/images/products/{{$product->image}}" >
+                          @endif
+</td>
+
+              @endforeach
+            </tr>          
+
+    </table>
     </div>
 </div>
 @endsection
