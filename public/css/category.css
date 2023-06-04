@@ -32,3 +32,148 @@
     height:100%;
     width:100%;
 }
+/* styles for popup view */
+ .popup_view{
+    z-index: 2;
+    background: rgba(40, 6, 6, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+
+}
+.popup_view.active{
+    opacity: 1;
+    visibility: visible;
+}
+ .popup-card{
+    position: relative;
+    display: flex;
+    width:800px;
+    height: 500px;
+    margin: 20px;
+
+}
+.popup-card .popup-img{
+    z-index: 2;
+    background-color: blue;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width:45%;
+    height: 90%;
+    transform: translateY(25px);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius:10px ;
+}
+.popup-card .popup-img img{
+    z-index: 2;
+    position: relative;
+    width: 450px;
+    left: -50px;
+}
+.popup-card .popup-info{
+    z-index: 2;
+    background:pink ;
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 10px;
+}
+.popup-card .close-btn-popup{
+    color: #555;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    font-size: 20px ;
+    margin: 20px;
+    cursor: pointer;
+}
+.popup-card .popup-info .popup-price{
+    font-size: 45px;
+    font-weight: 300;
+    margin: 10px;
+}
+.popup-card .popup-info h2 span{
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+.popup-card .popup-info .popup_cart{
+    color:white;
+    background: rgb(86, 86, 228);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 10px auto;
+    padding: 10px 50px;
+    border-radius: 20px;
+}
+@media (max-width:900px){
+    .popup-card{
+        flex-direction: column;
+        width:550px;
+        height: auto;
+    }
+    .popup-card .popup-img{
+        z-index: 3;
+        width: 100%;
+        height: 200px;
+        transform: translateY(0);
+        border-bottom-left-radius: 0;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+    }
+    .popup-card .popup-img img{
+        left: initial;
+        max-width: 100%;
+    }
+    .popup-card .popup-info{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .popup-card .popup-info{
+        margin: 20px 5px 5px 5px;
+        font-size: 25px;
+    }
+    .popup-card .popup-info h2{
+    font-size: 10px;
+    }
+    
+    .popup-card .popup-info h2 span{
+        font-size: 10px;
+        }
+    
+    .popup-card .popup-info p{
+        font-size: 13px;
+        margin: 5px;
+    }
+    
+    .popup-card .popup-info .popup-price{
+        font-size: 30px;
+        margin:5px;
+     }
+     
+    .popup-card  .popup_cart{
+        font-size: 14px;
+        margin: 5px auto;
+        padding: 5px 40px;
+    }
+    
+    .popup-card .close-btn{
+        z-index: 4;
+    }
+}

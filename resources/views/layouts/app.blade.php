@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/category.css')}}">
 
     <!-- Scripts -->
-   
+
 </head>
 <body>
    
@@ -33,5 +33,6 @@
             @yield('content')
         </main>
         {{View::make('layouts.footer')}}
+        <!-- <script type="text/javascript" src="{{ asset('js\popup.js')}}"></script> -->
 </body>
 </html>
