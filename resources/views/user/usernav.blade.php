@@ -42,11 +42,11 @@
     </header>
     <div class="header2">
         <ul class="nav2">
-                <li><a href="#" >Outdoor</a></li>
-                <li><a href="#" >Indoor</a></li>
-                <li><a href="#" class="active" >Carpets</a></li>
-                <li><a href="#" >Beddings</a></li>
-                <li><a href="#" ><i class="ri-shopping-cart-line"></i>Cart</a></li>
+                <li><a href="{{ route('outdoor') }}" >Outdoor</a></li>
+                <li><a href="{{ route('indoor') }}" >Indoor</a></li>
+                <li><a href="{{ route('carpets') }}"  >Carpets</a></li>
+                <li><a href="{{ route('beddings') }}" >Beddings</a></li>
+                <li><a href="{{ route('cart.show') }}" ><i class="ri-shopping-cart-line"></i>Cart</a></li>
             </ul>
     </div>
 </body>

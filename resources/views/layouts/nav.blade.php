@@ -29,7 +29,13 @@
                <a href="#"><i class="ri-search-2-line"></i></a>
             </form>
             <!-- -->
-            <div class="dropdown">
+            @auth
+      <li>
+        <a href="#">Hello, {{ Auth::user()->firstname }}</a>
+      </li>
+      <li><a href="{{ route('logout') }}">Logout</a></li>
+    @else
+    <div class="dropdown">
             <a href="#" class="user"><i class="ri-user-3-line"></i>Log In</a>
                 <div class="dropdown-content">
                  <a href="{{ route('userlogin') }}">User</a>
@@ -43,6 +49,8 @@
             </div> -->
             <a href="{{ route('register') }}">Register</a>
         </div>
+    @endauth
+           
     </header>
     <div class="header2">
         <ul class="nav2">
@@ -50,7 +58,7 @@
                 <li><a href="{{ route('indoor') }}" >Indoor</a></li>
                 <li><a href="{{ route('carpets') }}"  >Carpets</a></li>
                 <li><a href="{{ route('beddings') }}" >Beddings</a></li>
-                <li><a href="#" ><i class="ri-shopping-cart-line"></i>Cart</a></li>
+                <li><a href="{{ route('cart.show') }}" ><i class="ri-shopping-cart-line"></i>Cart</a></li>
             </ul>
     </div>
 </body>
