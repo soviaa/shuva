@@ -63,6 +63,10 @@ Route::get('/admin/adminusers',[AdminProductController::class,'userprint'])->nam
 Route::get('/userhome', [App\Http\Controllers\UserController::class, 'userhome'])->name('userhome');
 Route::post('/addtocart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('addtocart');
 Route::get('/showcart', [App\Http\Controllers\CartController::class, 'showCart'])->name('cart.show');
+Route::post('/cart/update/{id}', [CartController::class, 'updateCartQuantity'])->name('cart.update');
+Route::post('/cart/delete/{id}', [CartController::class, 'deleteCartItem'])->name('cart.delete');
+Route::post('/checkout/process', [CartController::class, 'processCheckout'])->name('checkout.process');
+Route::get('/checkout/success', [CartController::class, 'checkoutSuccess'])->name('checkout.success');
 
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');

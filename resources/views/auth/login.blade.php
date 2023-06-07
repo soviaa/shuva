@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@if(session('error'))
+    <div class="alert alert-danger" style="font-size: 14px; padding: 5px; width: 60%; margin: 0 auto;">{{ session('error') }}</div>
+    
+@endif
 @section('content')
 <div class="userlogin">
 <div class="loginbg"><img src="/images/loginbg.jpg" alt="carpet"></div>
