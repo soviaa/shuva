@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -60,6 +61,9 @@ Route::get('/admin/adminusers',[AdminProductController::class,'userprint'])->nam
 //user 
 
 Route::get('/userhome', [App\Http\Controllers\UserController::class, 'userhome'])->name('userhome');
+Route::post('/addtocart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('addtocart');
+Route::get('/showcart', [App\Http\Controllers\CartController::class, 'showCart'])->name('cart.show');
+
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
