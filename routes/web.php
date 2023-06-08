@@ -55,6 +55,8 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('adminlogo
 Route::get('/admin/dash', [AdminProductController::class, 'admindash'])->name('admindash');
 Route::get('/admin/addproducts', [AdminProductController::class, 'addproducts'])->name('addproducts');
 Route::post('/admin/addproducts', [AdminProductController::class, 'addproducts_post'])->name('addproducts');
+Route::get('/admin/editproducts/{id}', [AdminProductController::class, 'editproducts'])->name('editproducts');
+Route::post('/admin/editproducts', [AdminProductController::class, 'editproducts_post'])->name('editproducts');
 // Route::get('/admin/product', [AdminProductController::class, 'product'])->name('product');
 Route::get('/admin/product', [AdminProductController::class, 'print'])->name('product');
 Route::get('/admin/deleteproduct/{id}',[AdminProductController::class,'delete'])->name('delete');

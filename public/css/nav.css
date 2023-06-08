@@ -178,7 +178,7 @@ color:var(--main-color);
     text-decoration-style: unset;
 
 }
-.nav2 a.active{
+.nav2 ul li.active a{
   background-color: #fff;
   color: #F09118;
   padding: 16.9px;

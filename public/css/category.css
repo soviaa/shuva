@@ -1,6 +1,8 @@
 .products-category{
     width:400px;
     margin:20px;
+    padding: 15px;
+    
 }
 .products_row{
     display:flex;
@@ -13,15 +15,23 @@
 .pro_cart{
     padding-left: 150px;
 }
+.pop-btn span{
+    background: #f69e06f6;
+}
 .pro_desc span{
     margin-bottom: 10px !important ;
 }
 .pro_content{
-    background: #b0a9a9;
+    background: #fff1bf;
     padding: 10px 15px;
 }
 .main_product{
-    background:#c1bebe;
+    background:#ffff;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 3px;
+    width: 300px;
 }
 .main_images:hover img{
     transform:scale(1.3);
@@ -32,6 +42,7 @@
     height:100%;
     width:100%;
 }
+
 /* styles for popup view */
  .popup_view{
     z-index: 2;
@@ -56,13 +67,12 @@
     position: relative;
     display: flex;
     width:800px;
-    height: 500px;
+    height: 450px;
     margin: 20px;
 
 }
 .popup-card .popup-img{
     z-index: 2;
-    background-color: blue;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -77,10 +87,12 @@
     position: relative;
     width: 450px;
     left: -50px;
+    bottom: 25px;
 }
+
 .popup-card .popup-info{
     z-index: 2;
-    background:pink ;
+    background:#fff1bf ;
     display: flex;
     flex-direction: column;
     width: 55%;
@@ -99,7 +111,17 @@
     cursor: pointer;
 }
 .popup-card .popup-info .popup-price{
-    font-size: 45px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px;
+}
+.popup-card .popup-info .popup-description{
+    font-size: 15px;
+    font-weight: 400;
+    margin: 10px;
+}
+.popup-card .popup-info h2{
+    font-size: 50px;
     font-weight: 300;
     margin: 10px;
 }
@@ -109,7 +131,7 @@
 }
 .popup-card .popup-info .popup_cart{
     color:white;
-    background: rgb(86, 86, 228);
+
     font-size: 16px;
     font-weight: 600;
     text-align: center;

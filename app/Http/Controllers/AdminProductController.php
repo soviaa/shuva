@@ -17,6 +17,9 @@ public function admindash(){
 public function addproducts(){
     return view('admin.addproducts');
 }
+public function editproducts(){
+    return view('admin.editproducts');
+}
 public function product(){
     return view('admin.product');
 }
@@ -29,12 +32,33 @@ public function addproducts_post(Request $request){
     $product->price=$request->price;
     $product->stock=$request->stock;
     $product->image=$request->image;
+    $product->description=$request->description;
     $product->save();
     return redirect('/admin/product');
 }
+public function editproducts_post(Request $request, $id)
+{
+    // Retrieve the product from the database based on the ID
+    $product = Product::find($id);
+
+     if ($product) {
+     // Update the product values
+        $product->product_name = $request->input('product_name');
+        $product->category_id = $request->input('category_id');
+        $product->price = $request->input('price');
+        $product->stock = $request->input('stock');
+
+         // Save the updated product
+        $product->save();
+
+return redirect()->back()->with('success', 'Product updated successfully');
+}
+
+return redirect()->back()->with('error', 'Product not found');
+}
 public function print(){
     $data= DB::table('products')
-    ->select('products.id','products.name AS product_name','categories.name AS category_name','products.price','products.stock',)
+    ->select('products.id','products.name AS product_name','categories.name AS category_name','products.price','products.stock','products.description')
     ->join('categories','products.category_id','=','categories.id')
     ->get();
     $category=Category::all();
@@ -59,4 +83,11 @@ public function print(){
         public function user(){
             return view('admin.adminusers');
         }
+       
+
+
+
+
+
+
 }
