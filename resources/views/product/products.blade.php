@@ -6,10 +6,12 @@
 <div class="products-main">
   <div class="description">
     <p>Elevate Your Space with </p><h4>Shuva Furniture & Furnishing,</h4><p> Where Style Meets Function.</p>
+    <a href="#sec-2"><div class="scrolldown"></div></a>
   </div>
-  <div class="scrolldown">
+ 
+  
 
-</div>
+
   <div class="products">
     <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,8 +25,24 @@
   </div>
 </div>
 </div>
-<div class="section-2">
-  productsss
+<div class="section-2" id="sec-2">
+  <div class="card"><a href="{{ route('outdoor') }}">
+    <img src="/images/cat1.jpg" alt="">
+    <div class="intro"><h3>Outdoor Products</h3></div></a>
+  </div>
+  <div class="card"><a href="{{ route('indoor') }}" >
+    <img src="/images/cat2.jpg" alt="">
+    <div class="intro"><h3>Indoor Products</h3></div></a>
+  </div>
+  <div class="card"><a href="{{ route('carpets') }}"  >
+    <img src="/images/cat3.jpg" alt="">
+    <div class="intro"><h3>Carpet Products</h3></div></a>
+  </div>
+  <div class="card"><a href="{{ route('beddings') }}" >
+    <img src="/images/cat4.jpg" alt="">
+    <div class="intro"><h3>Bedding Products</h3></div></a>
+  </div>
+   
 </div>
 
 <script>
