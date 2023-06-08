@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductsController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -33,6 +34,7 @@ Route::get('/products/outdoor', [App\Http\Controllers\ProductsController::class,
 Route::get('/products/indoor', [App\Http\Controllers\ProductsController::class, 'print_indoor'])->name('indoor');
 Route::get('/products/carpets', [App\Http\Controllers\ProductsController::class, 'print_carpets'])->name('carpets'); 
 Route::get('/products/beddings', [App\Http\Controllers\ProductsController::class, 'print_beddings'])->name('beddings'); 
+Route::get('/products/search', [App\Http\Controllers\ProductsController::class, 'search'])->name('product.search'); 
 
 
 Route::get('/register', [UserController::class,'userreg'])->name('register');
@@ -71,6 +73,13 @@ Route::post('/cart/update/{id}', [CartController::class, 'updateCartQuantity'])-
 Route::post('/cart/delete/{id}', [CartController::class, 'deleteCartItem'])->name('cart.delete');
 Route::post('/checkout/process', [CartController::class, 'processCheckout'])->name('checkout.process');
 Route::get('/checkout/success', [CartController::class, 'checkoutSuccess'])->name('checkout.success');
+Route::get('/order/confirmation/{id}', [CartController::class, 'showOrderConfirmation'])->name('order.confirmation');
+
+
+// Route::post('/checkout/process', 'CartController@processCheckout')->name('checkout.process');
+
+
+
 
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');

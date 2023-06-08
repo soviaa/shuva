@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
   <div class="products-category">
+  @if(session('success'))
+            <div class="cart-success">
+              {{ session('success') }}
+            </div>
+@endif
+<div class="breadcrumbs">
+      <a href="/">Home</a> / <span>Outdoor</span> <!-- Update the breadcrumb text accordingly -->
+    </div>
     <div class="products_row">
       @foreach($data as $product)
         @if($product->category_id == 1)
@@ -30,6 +39,7 @@
 
     <!-- Popup view -->
     <div class="popup_view">
+ 
       <div class="popup-card">
         <button class="close-btn-popup">
           <i class="ri-close-line"></i>
@@ -46,13 +56,13 @@
             <label for="quantity">Quantity:</label>
             <input type="number" name="quantity" id="quantity" value="1" min="1">
             <button type="submit" class="add-to-cart-btn">Add to cart</button>
+        
           </form>
-  <div id="cart-popup-message" class="cart-popup-message hide">
-  Product added to cart
-</div>
+         
         </div>
       </div>
     </div>
+ 
   </div>
 
   <script>
@@ -84,9 +94,5 @@
     closeBtn.addEventListener('click', () => {
       popupView.classList.remove('active');
     });
-
-
-
-
   </script>
 @endsection

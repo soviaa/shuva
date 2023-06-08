@@ -2,6 +2,11 @@
 
 @section('content')
   <div class="products-category">
+  @if(session('success'))
+            <div class="cart-success">
+              {{ session('success') }}
+            </div>
+@endif
     <div class="products_row">
       @foreach($data as $product)
         @if($product->category_id == 4)
@@ -47,9 +52,7 @@
             <input type="number" name="quantity" id="quantity" value="1" min="1">
             <button type="submit" class="add-to-cart-btn">Add to cart</button>
           </form>
-  <div id="cart-popup-message" class="cart-popup-message hide">
-  Product added to cart
-</div>
+
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@
 
 <body>
     <header>
-        <a href="{{ route('products') }}" class="logo"><img src="/images/shuva.PNG" width="300" height="100" alt="logo" ></a>
+        <a href="{{ route('products') }}" class="logo"><img src="/images/shuva.PNG" width="300" height="90" alt="logo" ></a>
         <div class="wrapper">
         
         <div class="main">
