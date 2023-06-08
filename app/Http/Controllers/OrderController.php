@@ -5,6 +5,7 @@ use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Cart;
 
 use Illuminate\Http\Request;
 
@@ -35,4 +36,7 @@ class OrderController extends Controller
             return view('admin/orderitems',compact('orders','product'));
           
             }
-    }
+           // return view('order.confirmation', ['order' => $order]);
+            }
+            
+    

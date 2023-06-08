@@ -26,12 +26,11 @@ header{
     width: 100%;
     top:0;
     right: 0;
-    height:50px;
+    height:40px;
     /* position:sticky; */
     display:flex ;
     /* align-items: ; */
     justify-content: space-between;
-    
     transition: all .50s ease;
     /* background: var(--bg-color); */
 }
@@ -40,6 +39,7 @@ header{
     padding-left: 100px;
     margin-bottom: 100px;
     width:0;
+    height:0;
 }
 
 .main{
@@ -76,7 +76,7 @@ header{
     border-left: none;
     outline: black;
     font-size: 15px;
-    color: #cac7ff;
+    color: black;
 }
 ::placeholder{
     color: #f092189c;

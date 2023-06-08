@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn('payment_method');
+            $table->string('payment_method')->nullable()->default('cash on delivery'); // Add the payment_method column with default value 'cash on delivery
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->string('payment_method')->nullable();
+            $table->dropColumn('payment_method'); // Remove the payment_method column
         });
     }
 };

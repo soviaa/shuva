@@ -1,15 +1,16 @@
 @extends('user.usermain')
 
-@if(session('error'))
-    <div class="alert alert-danger" style="font-size: 14px; padding: 5px; width: 60%; margin: 0 auto;">{{ session('error') }}</div>
-@endif
-
 @section('content')
     @if (!auth()->check())
         <div class="login-message">
             Please log in to view your cart.
         </div>
     @else
+    @if(session('success'))
+            <div class="cart-success">
+              {{ session('success') }}
+            </div>
+    @endif
         <table>
             <thead>
                 <tr>
@@ -43,16 +44,26 @@
                 @endforeach
             </tbody>
         </table>
+        
         <div class="total-amount">
             <h3>Total Amount: Rs.{{ $totalAmount }}</h3>
         </div>
         <div class="checkout-section">
             <div class="checkout-button">
+                <!-- Cash on Delivery button form -->
                 <form action="{{ route('checkout.process') }}" method="POST">
                     @csrf
-                    <button type="submit">Checkout</button>
+                    <button type="submit" name="payment_method" value="cash on delivery">Cash on Delivery</button>
+                    <button type="submit" name="payment_method" value="khalti">Pay with Khalti</button>
+                    <div class="checkout-button">
+                <!-- Khalti payment button -->
+               
+            </div>
                 </form>
             </div>
+           
         </div>
     @endif
+
+   
 @endsection

@@ -19,14 +19,14 @@
 
 <body>
     <header>
-        <a href="{{ route('products') }}" class="logo"><img src="/images/shuva.PNG" width="300" height="100" alt="logo" ></a>
+        <a href="{{ route('products') }}" class="logo"><img src="/images/shuva.PNG" width="300" height="90" alt="logo" ></a>
         <div class="wrapper">
         
         <div class="main">
         
-            <form action="" class="search">
+            <form action="{{ route('product.search') }}" class="search">
                 <input type="text" placeholder="Search store" name="q">
-               <a href="#"><i class="ri-search-2-line"></i></a>
+               <button type="submit" style="border:none;color:white"><a href="{{ route('product.search') }}"><i class="ri-search-2-line"></i></a></button>
             </form>
             <!-- -->
             @auth

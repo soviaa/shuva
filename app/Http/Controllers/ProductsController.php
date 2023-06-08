@@ -58,4 +58,29 @@ class ProductsController extends Controller
             $category=Category::all();
             return view('/product/beddings',compact('data','category'));
         }
-}
+       
+       
+        public function search(Request $request)
+        {
+            $search = $request->input('q');
+        
+            if ($search) {
+                $data = DB::table('products')
+                    ->select('products.id', 'products.name AS product_name', 'products.category_id', 'categories.name AS category_name', 'products.price', 'products.stock', 'products.image')
+                    ->join('categories', 'products.category_id', '=', 'categories.id')
+                    ->where('products.name', 'LIKE', '%' . $search . '%')
+                    ->get();
+        
+                return view('product.searchresults', compact('data'));
+            }
+        
+            return view('product.searchresults')->with('message', 'Please enter a search term.');
+        }
+        
+        }
+        
+        
+
+             
+
+

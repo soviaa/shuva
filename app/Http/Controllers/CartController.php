@@ -91,63 +91,71 @@ public function deleteCartItem($id)
     
     return redirect()->back()->with('success', 'Cart item deleted.');
 }
-public function processCheckout(Request $request)
-{
-    // Get the authenticated user
-    $user = Auth::user();
 
-    // Get the cart items for the user
-    $cartItems = Cart::where('user_id', $user->id)->get();
 
-    // Calculate the total amount
-    $totalAmount = $cartItems->sum(function ($item) {
-        return $item->quantity * $item->price;
-    });
 
-    // Create a new order
-    $order = new Order();
-    $order->user_id = $user->id;
-    $order->cart_id = $cartItems->first()->cart_id; // Assign the cart_id from the first cart item
-    $order->total_amount = $totalAmount;
-    $order->status = 'pending'; // Default status is pending
-    $order->save();
 
-    // Move cart items to order items
-    foreach ($cartItems as $cartItem) {
-        $order->items()->create([
-            'product_id' => $cartItem->product_id,
-            'quantity' => $cartItem->quantity,
-            'price' => $cartItem->price,
-            'total' => $cartItem->quantity * $cartItem->price,
-        ]);
+    public function processCheckout(Request $request)
+    {
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Get the cart items for the user
+        $cartItems = Cart::where('user_id', $user->id)->get();
+
+        // Calculate the total amount
+        $totalAmount = $cartItems->sum(function ($item) {
+            return $item->quantity * $item->price;
+        });
+
+        // Create a new order
+        $order = new Order();
+        $order->user_id = $user->id;
+        $order->total_amount = $totalAmount;
+        $order->payment_method = $request->input('payment_method'); // Get the selected payment method from the form
+        $order->status = 'pending'; // Default status is pending
+        $order->save();
+
+        // Move cart items to order items
+        foreach ($cartItems as $cartItem) {
+            $order->items()->create([
+                'product_id' => $cartItem->product_id,
+                'quantity' => $cartItem->quantity,
+                'price' => $cartItem->price,
+                'total' => $cartItem->quantity * $cartItem->price,
+            ]);
+        }
+
+        // Clear the cart for the user
+        $cartItems->each(function ($cartItem) {
+            $cartItem->delete();
+        });
+        if($order->payment_method==='cash on delivery'){
+            return redirect()->route('order.confirmation', ['id' => $order->id]);
+        }
+        elseif($order->payment_method==='khalti'){
+            return view('user.khalti', compact('order', 'user'));
+
+
+        }
+        // Redirect to the confirmation page with the order ID
+        
     }
 
-    // Clear the cart for the user
-    $cartItems->each(function ($cartItem) {
-        $cartItem->delete();
-    });
+    public function showOrderConfirmation($id)
+    {
+        // Retrieve the order from the database
+        $order = Order::findOrFail($id);
 
-    // Redirect with success message
-    return redirect()->route('checkout.success')->with('success', 'Order placed successfully.');
-}
-
-
-public function checkoutSuccess()
-{
-    // Get the authenticated user
-    $user = Auth::user();
-
-    // Get the latest order for the user
-    $order = Order::where('user_id', $user->id)->latest()->first();
+        // Display the order confirmation page
+        return view('user.checkout', compact('order'));
+    }
 
   
-
-    return view('user.checkout');
-
 }
 
 
 
 
-}
+
 
