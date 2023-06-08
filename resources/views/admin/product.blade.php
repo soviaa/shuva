@@ -11,27 +11,32 @@
             <th scope="col">&nbsp;&nbsp;ID</th>
             <th scope="col">&nbsp;&nbsp;Name</th>
             <th scope="col">&nbsp;&nbsp;Category</th>
+            <th scope="col">&nbsp;&nbsp;Description</th>
             <th scope="col">&nbsp;&nbsp;Price</th>
             <th scope="col">&nbsp;&nbsp;Stock</th>
+            <th scope="col">&nbsp;&nbsp;Action</th>
+            <th scope="col">&nbsp;&nbsp;</th>
           
 </tr>
 </thead>
 
-<tbody>
+<tbody> <a href="{{route('addproducts')}}"><input type="button" value="Add Products"></a>&nbsp;&nbsp;&nbsp;&nbsp;
 @foreach($data as $product)
     <tr>
     <th scope="row">&nbsp;&nbsp;{{$product->id}}</td>
     <td>&nbsp;&nbsp;{{$product->product_name}}</td>
     <td>&nbsp;&nbsp;{{$product->category_name}}</td>
+    <td>&nbsp;&nbsp;{{$product->description}}</td>
     <td>&nbsp;&nbsp;{{$product->price}}</td>
     <td>&nbsp;&nbsp;{{$product->stock}}</td>
     <td>&nbsp;&nbsp;<a href="deleteproduct/{{$product->id}}" class="btn btn-danger">Delete</a></td>
+    <td>&nbsp;&nbsp;<a href="{{ route('editproducts', ['id' => $product->id]) }}" class="btn btn-danger">Edit</a></td>
 </tr>
 @endforeach
 </tbody>
     </table>
-    <a href="{{route('addproducts')}}"><input type="button" value="Add Products"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="#"><input type="button" value="Edit Products"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+   
+    
    
 </div>
 @endsection

@@ -21,7 +21,8 @@ class ProductsController extends Controller
     }
     public function print_outdoor(){
         $data= DB::table('products')
-        ->select('products.id','products.name AS product_name','products.category_id','products.image','products.price','products.stock',)
+        ->select('products.id','products.name AS product_name','products.category_id',
+        'products.image','products.price','products.stock','products.description')
         ->join('categories','products.category_id','=','categories.id')
         ->get();
         $category=Category::all();
@@ -33,28 +34,31 @@ class ProductsController extends Controller
         }
         public function print_indoor(){
             $data= DB::table('products')
-            ->select('products.id','products.name AS product_name','products.category_id','categories.name AS category_name','products.price','products.stock','products.image',)
+            ->select('products.id','products.name AS product_name','products.category_id','categories.name AS category_name','products.price','products.stock','products.image','products.description')
             ->join('categories','products.category_id','=','categories.id')
             ->get();
-            $data=Product::all();
+            
             $category=Category::all();
             return view('/product/indoor',compact('data','category'));
             }
         public function print_carpets(){
             $data= DB::table('products')
-            ->select('products.id','products.name AS product_name','products.category_id','categories.name AS category_name','products.price','products.stock','products.image','categories.id AS categories_id')
+            ->select('products.id','products.name AS product_name',
+            'products.category_id','categories.name AS category_name',
+            'products.price','products.stock','products.image','categories.id AS categories_id',
+            'products.description')
             ->join('categories','products.category_id','=','categories.id')
             ->get();
-            $data=Product::all();
+            
             $category=Category::all();
             return view('/product/carpets',compact('data','category'));
             }
         public function print_beddings(){
             $data= DB::table('products')
-            ->select('products.id','products.name AS product_name','products.category_id','categories.name AS category_name','products.price','products.stock','products.image','categories.id AS categories_id')
+            ->select('products.id','products.name AS product_name','products.category_id','categories.name AS category_name','products.price','products.stock','products.image','categories.id AS categories_id','products.description')
             ->join('categories','products.category_id','=','categories.id')
             ->get();
-            $data=Product::all();
+            
             $category=Category::all();
             return view('/product/beddings',compact('data','category'));
         }
@@ -66,7 +70,7 @@ class ProductsController extends Controller
         
             if ($search) {
                 $data = DB::table('products')
-                    ->select('products.id', 'products.name AS product_name', 'products.category_id', 'categories.name AS category_name', 'products.price', 'products.stock', 'products.image')
+                    ->select('products.id', 'products.name AS product_name', 'products.category_id', 'categories.name AS category_name', 'products.price', 'products.stock', 'products.image','products.description')
                     ->join('categories', 'products.category_id', '=', 'categories.id')
                     ->where('products.name', 'LIKE', '%' . $search . '%')
                     ->get();

@@ -54,10 +54,10 @@
     </header>
     <div class="header2">
         <ul class="nav2">
-                <li><a href="{{ route('outdoor') }}" >Outdoor</a></li>
-                <li><a href="{{ route('indoor') }}" >Indoor</a></li>
-                <li><a href="{{ route('carpets') }}"  >Carpets</a></li>
-                <li><a href="{{ route('beddings') }}" >Beddings</a></li>
+        <li class="{{ request()->is('outdoor') ? 'active' : '' }}"><a href="{{ route('outdoor') }}" >Outdoor</a></li>
+        <li class="{{ request()->is('indoor') ? 'active' : '' }}"><a href="{{ route('indoor') }}" >Indoor</a></li>
+        <li class="{{ request()->is('carpets') ? 'active' : '' }}"><a href="{{ route('carpets') }}"  >Carpets</a></li>
+        <li class="{{ request()->is('beddings') ? 'active' : '' }}"><a href="{{ route('beddings') }}" >Beddings</a></li>
                 <li><a href="{{ route('cart.show') }}" ><i class="ri-shopping-cart-line"></i>Cart</a></li>
             </ul>
     </div>

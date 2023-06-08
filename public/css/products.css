@@ -77,7 +77,7 @@
   width: 310px;
   height: 300px;
   border-radius: 3px;
-  transition: .5s;
+  transition: .5;
 }
 .card{
   height:300px;
