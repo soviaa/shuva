@@ -107,6 +107,7 @@ public function processCheckout(Request $request)
     // Create a new order
     $order = new Order();
     $order->user_id = $user->id;
+    $order->cart_id = $cartItems->first()->cart_id; // Assign the cart_id from the first cart item
     $order->total_amount = $totalAmount;
     $order->status = 'pending'; // Default status is pending
     $order->save();
@@ -126,11 +127,8 @@ public function processCheckout(Request $request)
         $cartItem->delete();
     });
 
-    // Generate the QR code URL (you need to customize this according to your QR code generation logic)
-    $qrCodeUrl = 'https://example.com/qrcode?order_id=' . $order->id;
-
-    // Redirect to the checkout success page with the QR code URL
-    return redirect()->route('checkout.success', ['qrCodeUrl' => $qrCodeUrl])->with('success', 'Order placed successfully.');
+    // Redirect with success message
+    return redirect()->route('checkout.success')->with('success', 'Order placed successfully.');
 }
 
 
@@ -147,5 +145,9 @@ public function checkoutSuccess()
     return view('user.checkout');
 
 }
+
+
+
+
 }
 

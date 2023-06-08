@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -56,6 +57,9 @@ Route::post('/admin/addproducts', [AdminProductController::class, 'addproducts_p
 Route::get('/admin/product', [AdminProductController::class, 'print'])->name('product');
 Route::get('/admin/deleteproduct/{id}',[AdminProductController::class,'delete'])->name('delete');
 Route::get('/admin/adminusers',[AdminProductController::class,'userprint'])->name('userprint');
+Route::get('/admin/orders', [OrderController::class, 'showAllOrders'])->name('orders');
+Route::get('/admin/orderitems', [OrderController::class, 'showAllItems'])->name('order-items');
+
 
 
 //user 

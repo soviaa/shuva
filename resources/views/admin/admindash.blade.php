@@ -34,10 +34,15 @@
                     <h3>Products</h3>
                     
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">monitoring</span><h3>Orders</h3>
+                <a href="{{route('orders')}}">
+                    <span class="material-icons-sharp">monitoring</span>
+                    <h3>Orders</h3>
                 </a>
-                <a href="{{route('userprint')}}">
+                <a href="{{route('order-items')}}">
+                    <span class="material-icons-sharp">monitoring</span>
+                    <h3>Order Items</h3>
+                </a>   
+                 <a href="{{route('userprint')}}">
                     <span class="material-icons-sharp">group</span>
                     <h3>Users</h3>
                 </a>
@@ -49,6 +54,7 @@
         </aside>
         @yield('product')
         @yield('user')
+        @yield('order')
      </div>
    
 </body>
