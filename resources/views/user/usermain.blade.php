@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{ asset('css/userlogin.css')}}">
     <link rel="stylesheet" href="{{ asset('css/userreg.css')}}">
     <link rel="stylesheet" href="{{ asset('css/home.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/cart.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/products.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/category.css')}}">
 
     <!-- Scripts -->
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>

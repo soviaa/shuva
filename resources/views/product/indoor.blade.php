@@ -3,14 +3,15 @@
 @section('content')
 
   <div class="products-category">
+  <div class="breadcrumbs">
+      <a href="/">Home</a> / <span style="color:orange;">Indoor</span> <!-- Update the breadcrumb text accordingly -->
+    </div>
     @if(session('success'))
       <div class="cart-success">
         {{ session('success') }}
       </div>
     @endif
-    <div class="breadcrumbs">
-      <a href="/">Home</a> / <span style="color:orange;">Indoor</span> <!-- Update the breadcrumb text accordingly -->
-    </div>
+   
     <div class="products_row">
       @foreach($data as $product)
         @if($product->category_id == 2)
