@@ -61,7 +61,7 @@ class CartController extends Controller
         $cartItem->total = $total;
         $cartItem->save();
     
-        return redirect()->back()->with('success', 'Product added to cart.');
+        return redirect()->back()->with('success', 'Product added to your cart.');
     }
     public function updateCartQuantity(Request $request, $id)
 {
@@ -77,7 +77,7 @@ class CartController extends Controller
     $cartItem->total = $cartItem->price * $quantity;
     $cartItem->save();
     
-    return redirect()->back()->with('success', 'Cart item quantity updated.');
+    return redirect()->back()->with('updated', 'Cart item quantity updated.');
 }
 public function deleteCartItem($id)
 {
@@ -89,7 +89,7 @@ public function deleteCartItem($id)
     
     $cartItem->delete();
     
-    return redirect()->back()->with('success', 'Cart item deleted.');
+    return redirect()->back()->with('updated', 'Cart item deleted.');
 }
 
 

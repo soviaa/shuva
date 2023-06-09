@@ -1,0 +1,79 @@
+.login-message{
+    background-color: rgb(255, 198, 112);
+}
+.cart-success{
+    background-color: rgb(255, 198, 112);
+    align-items: center;
+    display: flex;
+    margin-left: 500px;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border: 2px solid rgb(230, 157, 11);
+}
+.cart-table, .order-confirmation{
+    margin: 30px;
+    margin-left: 350px;
+    box-sizing: border-box;
+    border: 2px solid rgb(228, 224, 215);
+    padding: 40px;
+    padding-left: 70px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 20px black;
+    width: 50%;
+}
+.your-cart{
+    font-size: 20px;
+    margin-left: 220px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.cart-table table{
+    margin-left: 40px;
+}
+.cart-table .total-amount{
+    margin-left: 40px;
+    padding: 10px;
+}
+.cart-table table th{
+    background-color: gray;
+    color: white;
+    padding: 6px;
+    margin: 10px;
+}
+.cart-table table td{
+    border: 2px solid rgb(244, 238, 227);
+}
+.cart-updated{
+    background-color: rgb(255, 198, 112);
+    align-items: center;
+    display: flex;
+    margin-left: 500px;
+    width: 20%;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border: 2px solid rgb(230, 157, 11);
+}
+.cart-table button{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #e3992b8c;
+    cursor: pointer;
+    padding: 8px;
+}
+.checkout-button{
+    margin-left: 40px;
+
+}
+.checkout-button button{
+    margin-left: 0px;
+    background-color: #ed8e008c
+}
+.breadcrumbs{
+    margin:20px;
+}
