@@ -2,25 +2,26 @@
 @section('product')
 <div class="editproduct">
 
-<form action="{{route('editproducts')" method="POST">
+<form action="{{ route('editproducts_post', ['id' => $product->id]) }}" method="post">
 @csrf
 
     <br>
-<fieldset style="padding:30px; border:4px solid #69A4A0;" > 
-<legend><h4>&nbsp;&nbsp;<u>Edit Products</u></h4></legend>
-Product name: <input type="text" name="product_name">
-<select name="category_id" > <option value="">Select Category</option>
-
-     <option value="1" name="#">Outdoor</option>
-     <option value="2" name="#">Indoor</option>
-     <option value="3" name="#">Carpets</option>
-     <option value="4" name="#">Beddings</option>
+<fieldset style="padding:30px; border:4px solid #69A4A0;">
+<legend><h4>&nbsp;&nbsp;<u>Edit Product</u></h4></legend>
+Product name: <input type="text" name="product_name" value="{{ $product->product_name }}">
+<select name="category_id">
+    <option value="">Select Category</option>
+    <option value="1" {{ $product->category_id == 1 ? 'selected' : '' }}>Outdoor</option>
+    <option value="2" {{ $product->category_id == 2 ? 'selected' : '' }}>Indoor</option>
+    <option value="3" {{ $product->category_id == 3 ? 'selected' : '' }}>Carpets</option>
+    <option value="4" {{ $product->category_id == 4 ? 'selected' : '' }}>Beddings</option>
 </select>
-Set Price: <input type="number" name="price">
-Total Stock Available: <input type="number" name="stock">
+Set Price: <input type="number" name="price" value="{{ $product->price }}">
+Total Stock Available: <input type="number" name="stock" value="{{ $product->stock }}">
 Product image: <input type="file" name="image"><br>
 <button type="submit">Update</button>
 
 </form>
+</fieldset>
 </div>
 @endsection

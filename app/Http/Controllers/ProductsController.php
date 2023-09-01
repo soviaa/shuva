@@ -17,6 +17,7 @@ class ProductsController extends Controller
     }
   public function beddings()
     {
+        $count=0;
     return view('product.beddings');
     }
     public function print_outdoor(){
@@ -60,6 +61,7 @@ class ProductsController extends Controller
             ->get();
             
             $category=Category::all();
+          
             return view('/product/beddings',compact('data','category'));
         }
        
