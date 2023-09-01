@@ -1,4 +1,5 @@
 @extends('user.usermain')
+@section('title', 'Cart')
 @section('content')
     @if (!auth()->check())
         <div class="login-message">

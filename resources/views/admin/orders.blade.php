@@ -3,26 +3,27 @@
 @extends('admin.admindash')
 
 @section('order')
-    <h2>All Orders</h2>
+<div class="product-table" >
+    <h2><u>All Orders</u></h2>
 
     @if ($orders->isEmpty())
         <p>No orders found.</p>
     @else
-        <table>
-            <thead>
+        <table class="table">
+            <thead class="thead-dark">
                 <tr>
-                    <th>Order ID</th>
-                    <th>User</th>
-                    <th></th>
-                    <th>Phone Number</th>
-                    <th>Total Amount</th>
-                    <th>Status</th>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">User</th>
+                    <th scope="col"></th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Total Amount</th>
+                    <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($orders as $order)
                     <tr>
-                    <th scope="row">&nbsp;&nbsp;{{$order->id}}</td>
+                    <td scope="row">&nbsp;&nbsp;{{$order->id}}</td>
                     <td>&nbsp;&nbsp;{{$order->user_fname}}</td>
                     <td>&nbsp;&nbsp;{{$order->user_lname}}</td>
                     <td>&nbsp;&nbsp;{{$order->phone}}</td>
@@ -32,5 +33,6 @@
                 @endforeach
             </tbody>
         </table>
+</div>
     @endif
 @endsection

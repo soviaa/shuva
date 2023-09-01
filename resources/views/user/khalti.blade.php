@@ -1,6 +1,7 @@
 @extends('user.usermain')
+@section('title','Online Payment')
 @section('content')
-<button id="payment-button">Pay with Khalti</button>
+<button id="payment-button" style=" margin:50px;margin-left:620px; padding:20px; background-color:#b499ff;cursor:pointer;">Pay with Khalti</button>
         <!-- Khalti integration script -->
   
     <script>
