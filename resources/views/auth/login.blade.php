@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Login')
 @section('content')
 <div class="userlogin">
 <div class="loginbg"><img src="/images/loginbg.jpg" alt="carpet"></div>

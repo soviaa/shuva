@@ -1,8 +1,9 @@
 @extends('admin.admindash')
 @section('user')
+<div class="product-table" >
 <div class="user-table" >
 <br><br>
-<h4>&nbsp;&nbsp;<u>Product List</u></h4>
+<h4>&nbsp;&nbsp;<u>Users List</u></h4>
 
     <table class="table" >
         
@@ -20,7 +21,7 @@
 <tbody>
 @foreach($data as $users)
     <tr>
-    <th scope="row">&nbsp;&nbsp;{{$users->id}}</td>
+    <td scope="row">&nbsp;&nbsp;{{$users->id}}</td>
     <td>&nbsp;&nbsp;{{$users->f_name}}</td>
     <td>&nbsp;&nbsp;{{$users->l_name}}</td>
     <td>&nbsp;&nbsp;{{$users->email}}</td>
@@ -31,6 +32,6 @@
 </tbody>
     </table>
    
-   
+</div>
 </div>
 @endsection

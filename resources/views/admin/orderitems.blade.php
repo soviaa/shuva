@@ -3,13 +3,14 @@
 @extends('admin.admindash')
 
 @section('order')
-    <h2>All Orders</h2>
+<div class="product-table" >
+    <h2><u>Ordered Items</u></h2>
 
     @if ($orders->isEmpty())
         <p>No orders found.</p>
     @else
-        <table>
-            <thead>
+        <table class="table">
+            <thead class="thead-dark">
                 <tr>
                     <th>Item ID</th>
                     <th>Order ID</th>
@@ -22,7 +23,7 @@
             <tbody>
                 @foreach($orders as $order)
                     <tr>
-                    <th scope="row">&nbsp;&nbsp;{{$order->id}}</td>
+                    <td scope="row">&nbsp;&nbsp;{{$order->id}}</td>
                     <td>&nbsp;&nbsp;{{$order->order_id}}</td>
                     <td>&nbsp;&nbsp;{{$order->product_name}}</td>
                     <td>&nbsp;&nbsp;{{$order->quantity}}</td>
@@ -32,5 +33,6 @@
                 @endforeach
             </tbody>
         </table>
+    <div>
     @endif
 @endsection

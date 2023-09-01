@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp">
     <link rel="stylesheet" href="{{ asset('css/form.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/admintables.css')}}">
 
     <title>Dashboard</title>
 </head>
 <body>
-
+<div class="admindash">
      <div class="container">
         <aside>
             <div class="top">
@@ -35,12 +36,14 @@
                     
                 </a>
                 <a href="{{route('orders')}}">
-                    <span class="material-icons-sharp">monitoring</span>
-                    <h3>Orders</h3>
+                <span class="material-icons-sharp">archive</span><h3>Orders</h3>
+                    
                 </a>
                 <a href="{{route('order-items')}}">
-                    <span class="material-icons-sharp">monitoring</span>
-                    <h3>Order Items</h3>
+                <span class="material-icons-sharp">
+sort
+</span>
+                    <h3 style="display: inline-block;">Order Items</h3>
                 </a>   
                  <a href="{{route('userprint')}}">
                     <span class="material-icons-sharp">group</span>
@@ -56,6 +59,6 @@
         @yield('user')
         @yield('order')
      </div>
-   
+     </div>
 </body>
 </html>

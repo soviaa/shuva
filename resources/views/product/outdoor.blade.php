@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Outdoor')
 @section('content')
 
   <div class="products-category">
