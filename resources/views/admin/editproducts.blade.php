@@ -12,7 +12,7 @@
   
     <fieldset style="padding:30px; border:4px solid black" > 
 
-Product name: <input type="text" name="product_name" value="{{ $product->product_name }}">
+Product name: <input type="text" name="product_name" value="{{ $product->name }}">
 <select name="category_id">
     <option value="">Select Category</option>
     <option value="1" {{ $product->category_id == 1 ? 'selected' : '' }}>Outdoor</option>

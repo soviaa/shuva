@@ -65,8 +65,8 @@ public function addproducts_post(Request $request){
 
         // Save the updated product
         $product->save();
-
-        return redirect()->back()->with('success', 'Product updated successfully');
+        return redirect('/admin/product');
+        // return redirect()->back()->with('success', 'Product updated successfully');
     }
 
 

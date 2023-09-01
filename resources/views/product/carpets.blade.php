@@ -13,30 +13,39 @@
     @endif
    
     <div class="products_row">
-      @foreach($data as $product)
-        @if($product->category_id == 3)
-          <div class="main_product">
-            <div class="pro_image">
-              <img src="/images/products/{{$product->image}}" alt="{{$product->product_name}}" style="height:350px; width:290px">
-            </div>
-            <div class="pro_content">
-              <div class="pro_desc">
-                <span>{{$product->product_name}}</span>
-              </div>
-              <div class="pro_price">
-                <span>Rs.{{$product->price}}</span>
-              </div>
-              <div class="pro_cart">
-                <button class="popup-btn" data-image="/images/products/{{$product->image}}" data-name="{{$product->product_name}}" data-price="{{$product->price}}" data-product="{{$product->id}}" data-description="{{$product->description}}" style="background-color:#ffb833; color: black;border-radius: 20px;padding:10px; cursor: pointer;">
-                  <i class="ri-shopping-bag-line"></i>
-                  <span>Shop Now</span>
-                </button>
-              </div>
-            </div>
-          </div> 
-        @endif
-      @endforeach
+    @php $count = 0; @endphp
+    <div class="product_row">
+        @foreach($data as $product)
+            @if($product->category_id == 3)
+                <div class="main_product">
+                    <div class="pro_image">
+                        <img src="/images/products/{{$product->image}}" alt="{{$product->product_name}}" style="height:350px; width:290px">
+                    </div>
+                    <div class="pro_content">
+                        <div class="pro_desc">
+                            <span>{{$product->product_name}}</span>
+                        </div>
+                        <div class="pro_price">
+                            <span>Rs.{{$product->price}}</span>
+                        </div>
+                        <div class="pro_cart">
+                            <button class="popup-btn" data-image="/images/products/{{$product->image}}" data-name="{{$product->product_name}}" data-price="{{$product->price}}" data-product="{{$product->id}}" data-description="{{$product->description}}" style="background-color:#ffb833; color: black;border-radius: 20px;padding:10px; cursor: pointer;">
+                                <i class="ri-shopping-bag-line"></i>
+                                <span>Shop Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                @php $count++; @endphp
+
+                @if($count < 4)
+                    </div>
+                    <div class="product_row">
+                @endif
+            @endif
+        @endforeach
     </div>
+</div>
 
     <!-- Popup view -->
     <div class="popup_view">

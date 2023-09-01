@@ -3,12 +3,12 @@
 <div class="product-table" >
 <br><br>
 <h4>&nbsp;&nbsp;<u>Product List</u></h4>
-
+&nbsp;&nbsp;<div class="addbutton"><a href="{{route('addproducts')}}"><input type="button" value="Add Products" class="btn btn-outline-primary"></a></div>
+<br>
     <table class="table">
         
     <thead class="thead-dark">
-    <th scope="col" style="padding:0px; background-color:white; border:none; ">&nbsp;&nbsp;<div class="addbutton"><a href="{{route('addproducts')}}"><input type="button" value="Add Products" class="btn btn-outline-primary"></a></div></th>
-    
+    <th scope="col" style="padding:0px; background-color:white; border:none; "></th>
         <tr>
             <th scope="col">&nbsp;&nbsp;ID</th>
             <th scope="col">&nbsp;&nbsp;Name</th>
@@ -19,8 +19,8 @@
             <th scope="col">&nbsp;&nbsp;Action</th>
             <th scope="col">&nbsp;&nbsp;</th>
 
-          
-</tr>
+            
+        </tr>
 </thead>
 
 <tbody> 
