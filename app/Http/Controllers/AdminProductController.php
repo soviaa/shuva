@@ -58,7 +58,7 @@ public function addproducts_post(Request $request){
         }
 
         // Update the product values
-        $product->product_name = $request->input('product_name');
+        $product->name = $request->input('product_name');
         $product->category_id = $request->input('category_id');
         $product->price = $request->input('price');
         $product->stock = $request->input('stock');

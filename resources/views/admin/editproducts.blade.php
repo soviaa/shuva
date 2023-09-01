@@ -1,13 +1,17 @@
 @extends('admin.admindash')
 @section('product')
+<div class="addproduct">
+<div class="product-table" >
+
 <div class="editproduct">
 
 <form action="{{ route('editproducts_post', ['id' => $product->id]) }}" method="post">
 @csrf
-
+<h4>&nbsp;&nbsp;<u>Edit Product</u></h4>
     <br>
-<fieldset style="padding:30px; border:4px solid #69A4A0;">
-<legend><h4>&nbsp;&nbsp;<u>Edit Product</u></h4></legend>
+  
+    <fieldset style="padding:30px; border:4px solid black" > 
+
 Product name: <input type="text" name="product_name" value="{{ $product->product_name }}">
 <select name="category_id">
     <option value="">Select Category</option>
@@ -23,5 +27,7 @@ Product image: <input type="file" name="image"><br>
 
 </form>
 </fieldset>
+</div>
+</div>
 </div>
 @endsection
